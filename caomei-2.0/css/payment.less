@@ -1,0 +1,65 @@
+@import "./public.less";
+//circle-style
+.circle(@top:0px,@size){ margin: 0 auto; .size(@size,@size); position: relative; border: 1px solid #ff7b6a; border-radius: 50%;}
+.circle-before(@Wsize:0px,@Hsize:0px) {
+    content: "";
+    display: block;
+    width: @Wsize;
+    height: @Hsize;
+    border: 0.1rem solid #ff7b6a;
+    border-radius: 50%;
+}
+.pay-circle{
+    .size(8rem,4.4rem); margin-top: 1.6rem;
+    .circle{
+        .circle(4.3rem,4.3rem);
+        &>span{
+             color: #ff7b6a; position: absolute; left: 50%; transform: translateX(-50%);
+        }
+        .pay-text{
+            font-size: 0.34rem; top: 1rem; 
+        }
+        .pay-now{
+             font-size: 1.06rem; top: 1.6rem; font-weight: bold;
+        }
+        .pay-now:before{
+            content: "￥"; position: absolute; left: -15px; color: #ff7b6a; display: inline; font-size: 0.45rem; bottom: 5px;
+        }
+        #pay-old{
+            color: #bbb; position: absolute; bottom: 0.725rem; left: 50%; transform: translateX(-50%); text-decoration:line-through; font-style: oblique; font-size: 0.4rem;
+        }
+    }
+    .circle:before{
+        .circle-before(3.8rem,3.8rem); margin: 0.15rem auto; background: url(../images/line-clicle.png) no-repeat; background-size: 100% 100%;
+    }
+}   
+.timeout-text{
+    color: #bbb; font-size: 14px; text-align: center; margin-top: 0.72rem;
+    &>span{
+        color: #ff7b6a;
+    }
+}
+.wrap{
+    position: relative; height: auto; width: 100%;
+    &>span{
+        display: flex; justify-content: center; align-items: center; width: 100%; color: #bbb; font-size: 13px; text-align: center; margin: 0.72rem auto 0;
+        &>i{
+            color: #8cbcf1;
+        }
+        &>input{
+            visibility: hidden; position: absolute; 
+        }
+        #lableInput{
+            display:inline-block; width: 14px; height: 14px; background-size: 100% 100%;
+        }
+        .chk_1+ label{
+            background: url(../images/weigouxuan@3x.png);
+        }
+        .chk_1:checked  + label{
+            background: url(../images/yonghuxieyi@3x.png);
+        }
+    }
+}
+.btn-style{
+    .btn-style(6rem); margin-top: 0.5rem; margin-bottom: 0.5rem;
+}

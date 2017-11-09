@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<link rel="stylesheet/less" type="text/css" href="css/user_info.less" /> 
+		<link rel="stylesheet/css" type="text/css" href="css/area/LArea.css" />  
+   		<script src="js/less-1.7.0.js"></script>
+   		<script src="js/viewport.js"></script>
+   		<script src="js/LAreaData1.js"></script>
+	    <script src="js/LAreaData2.js"></script>
+	    <script src="js/LArea.js"></script>
+	</head>
+	<body>
+		<div class="header-picture">
+			<span class="user_avatar">
+	  			<img src="images/line-clicle.png" width="100%" height="100%" />
+	  		</span>
+	  		<span class="user_name clearFix">张三</span>
+		</div>
+		<div class="pay-procedure">
+			<div class="inner inner-img inner-img-1 inner-over">
+				<img src="images/fufei@3x.png" />
+			</div>
+		    <div class="inner inner-line"></div>
+		    <div class="inner inner-img inner-img-2 inner-over">
+		    	<img src="images/baoming@3x.png" />
+		    </div>
+		    <div class="inner inner-line"></div>
+		    <div class="inner inner-img inner-img-3">
+		    	<img src="images/weifenban@3x.png" />
+		    </div>
+		    <div class="inner inner-line"></div>
+		    <div class="inner inner-img inner-img-4">
+		    	<img src="images/weikaixue@3x.png" />
+		    </div>
+		</div>
+		<p class="suggest-text">请您认真地填写以下信息, 我们会为您制定合适的课程。</p>
+		<!--输入列表-->
+		<form>
+			<ul class="info-list">
+				<li class="list-1">
+					<div class="img-user"></div>
+					<input type="text" placeholder="请输入名字"/>
+				</li>
+				<li class="list-2">
+					<div class="img-sex"></div>
+					<input type="text" placeholder="请输入姓名"/>
+				</li>
+				<li class="list-3">
+					<div class="img-phone"></div>
+					<input name="mobile" type="number" placeholder="请输入手机号"/>
+				</li>
+				<li class="list-4">
+					<div class="img-code"></div>
+					<input type="text" placeholder="请输入验证码"/>
+				</li>
+				<li class="list-5">
+					<div class="img-map"></div>
+					<input id="demo1" type="text" placeholder="请输入所在地"/>
+					<input id="value1" type="hidden" value="20,234,504"/>
+				</li>
+				<li class="list-6">
+					<div class="img-age"></div>
+						<select>
+							<option>公司职员</option>
+							<option>全职妈妈</option>
+							<option>学生</option>
+							<option>编制人员</option>
+						</select>
+				</li>
+				<li class="list-7">
+					<div class="img-identity"></div>
+					<input type="text" placeholder="学生/职场人员"/>
+				</li>
+				<li class="list-8">
+					<div class="img-education"></div>
+					<input type="text" placeholder="请输入学历"/>
+				</li>
+			</ul>
+		</form>
+		
+	</body>
+</html>
+<script>
+    var area2 = new LArea();
+    area2.init({
+        'trigger': '#demo1',
+        'valueTo': '#value1',
+        'keys': {
+            id: 'value',
+            name: 'text'
+        },
+        'type': 2,
+        'data': [provs_data, citys_data, dists_data]
+    });
+</script>

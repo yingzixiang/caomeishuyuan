@@ -1,0 +1,114 @@
+@imgurl:"../images";//图片路径
+@imgurl-icon:"../images/icon";//图片路径
+@imgurl-star:"../images/star";//图片路径
+//大小
+@width:100%;
+@height:100%;
+//设定大小
+.size(@Wsize:0px,@Hsize:0px){ width: @Wsize !important; height: @Hsize !important;}
+//定位
+.position(@top:0px,@left:0px){position:absolute; top:@top;left:@right;}
+.position2(@bottom:0px,@right:0px){ position:absolute; bottom:@bottom; right:@right;}
+//背景图定义
+.background(@url,@top:0px,@left:0px){ background: url(@url) no-repeat @top @left;}
+.contain{ background-size:contain !important;}
+.cover{ background-size:cover !important;}
+
+//css Reset   
+*{ padding:0px; margin:0px; cursor:default; -webkit-tap-highlight-color:rgba(255,255,255,0);  outline:none; font-family:Helvetica; }
+body,html{
+    .size(@width,auto); letter-spacing: 0px; color:#000; overflow-y: auto; overflow-x: hidden !important;
+    font-family:Helvetica; 
+}
+i{
+    font-style: normal;
+}
+
+//测试
+.test{ border:1px solid red;}
+//超出用...代替
+.libr{ white-space: nowrap; text-overflow:ellipsis; overflow:hidden;}
+//下划线
+.urlStylpe{ color:#000ecc; text-decoration:underline;}
+
+/*清除浮动*/
+.clearFix{ *zoom:1;}   
+.clearFix:after{ content:""; clear:both; height:0px; display:block; overflow:hidden; visibility:hidden;}
+.hidden{ display: none;}
+
+//滚动条样式
+::-webkit-scrollbar{ .size(0em,0em);}   
+::-webkit-scrollbar-thumb{ border-radius: 0.5em; -webkit-box-shadow: 0 0 6px rgba(75,75,75,0.5); background-color: rgba(216, 216, 216, 0.2);}
+//按钮样式
+.btn-style(@size){
+    .size(@size,1rem); margin: 0 auto; background: #ff686b; text-align: center; color: #fff; font-size: 0.35rem; line-height: 1rem; border-radius: 0.5rem;
+}
+.header-picture{
+    .size(8rem,1.92rem);
+    .user_avatar{ 
+        display: inline-block; overflow: hidden; .size(1.1rem,1.1rem); margin: 0.53rem 0 0 0.64rem; border-radius: 50%;
+        &>img{
+            background-size: 100% 100%;
+        }
+    }
+    .user_name{ 
+        float: right; display: inline-block; height: 0.7rem; line-height: 0.7rem; font-size: 0.384rem; font-weight: 600; margin: 0.64rem 0.85rem 0 0; color: rgb(102,102,102);
+    }
+}
+//报名流程
+.pay-procedure{
+    display: flex; height: 0.96rem; margin: 0 0.64rem;
+    
+    &>.inner-img{
+        .size(1.5rem, @height); position: relative;
+        &>img{
+            width: 0.96rem; margin: 0 auto; display: block; background-size: 100% 100%;
+        }
+    }
+    .inner-img-1:after{
+        content: "付费"; display: inline-block; width: 100%; height: 0.4rem; text-align: center; font-size: 0.3rem; color: #666; position: absolute; bottom: -0.5rem;
+    }
+    .inner-img-2:after{
+        content: "报名"; display: inline-block; width: 100%; height: 0.4rem; text-align: center; font-size: 0.3rem; color: #666; position: absolute; bottom: -0.5rem;
+    }
+    .inner-img-3:after{
+        content: "分班"; display: inline-block; width: 100%; height: 0.4rem; text-align: center; font-size: 0.3rem; color: #666; position: absolute; bottom: -0.5rem;
+    }
+    .inner-img-4:after{
+        content: "开学"; display: inline-block; width: 100%; height: 0.4rem; text-align: center; font-size: 0.3rem; color: #666; position: absolute; bottom: -0.5rem;
+    }
+    &>.inner-line{
+        .size(1.6rem,@height); position: relative;
+    }
+    &>.inner-over{
+       &>img{
+           width: 0.5rem; margin: 0.2rem auto 0;
+       }
+    }
+    .inner-line:after{
+        content: ""; display: inline-block; position: absolute; top: 46%; left: 15%; width: 70%; height: 1px; background-color: #666;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
