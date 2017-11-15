@@ -1,0 +1,28 @@
+@import "./public.less";
+
+.sign-success-text,.tip-text{
+    font-size: 15px; color: #999; text-align: center; margin-top: 1rem;
+}
+.time-text{
+    color: #666; font-size: 16px; font-weight: 600; text-align: center;
+}
+.class-time{
+    margin-top: 0.85rem; 
+}
+.study-time{
+    margin-top: 0.21rem;
+}
+.qrcode-box{
+    width: 8rem; height: 3.1rem; margin: 0.8rem auto 0; 
+    @media screen and (max-width: 349px) { margin-top: 0.6rem; }
+    .qrcode-img {
+        width: 3rem; height: 3rem; margin-left: calc(~"50% - 1.5rem");
+    }
+}
+.tip-text{
+    margin-top: 0.2rem;   
+}
+.btn-style{
+    .btn-style(6.72rem); margin-top: 0.55rem; margin-bottom: 0.18rem;
+    @media screen and (max-width: 349px) { margin-top: 0.4rem; }
+}

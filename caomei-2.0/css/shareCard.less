@@ -1,0 +1,115 @@
+@import "./public.less";
+body{
+  .size(@width,@height);
+  .page-home{
+        .size(@width,@height); position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        -moz-box-sizing: border-box; box-sizing: border-box; background: #f7f7f7;
+        .top-card{
+            width: 100%; height: 40%; font-size: 0; position: relative;
+            &>.top-img{
+                background-size: 100% 100%;
+            }
+            .header-bg {
+                width: 100%; height: 75% !important; position: absolute; top: 10%;
+                .user_avatar {
+                    display: block; width: 80px !important; height: 80px !important;
+                    margin: 0 auto; border-radius: 50%; overflow: hidden; background-size: contain !important;
+                    @media screen and (max-width: 349px) { .size(72px,72px); }
+                }
+                .user_name{
+                    text-align: center; color: #666; font-size: 18px; 
+                }
+                .user_words{
+                    color: #666; width: 100%; margin-top: 3%;
+                    text-align: center; font-size: 15px; line-height: 15px;
+                    @media screen and (max-width: 349px) { margin-top: 2%; font-size: 13px; }
+                }
+            }
+        }
+        .bottom-tab{
+            width: 100%; height:30%; display: table; background: #fff;
+            &>div{
+                display: table-cell; width: 50%; text-align: center; vertical-align: middle; position: relative;
+            }
+            .tab-num{
+                font-size: 18px; font-weight: bold; padding-top: 4px;
+                background-image: -webkit-linear-gradient(left, #ff6666 , #ffb667) !important; /* Safari 5.1 - 6.0 */
+                background-image: -o-linear-gradient(right, #ff6666 , #ffb667) !important; /* Opera 11.1 - 12.0 */
+                background-image: -moz-linear-gradient(right, #ff6666 , #ffb667) !important; /* Firefox 3.6 - 15 */
+                background-image: linear-gradient(to right, #ff6666 , #ffb667) !important; /* 标准的语法 */
+                -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+                -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+                -webkit-background-size: 200% 100%; 
+                -webkit-animation: masked-animation 1s linear infinite;
+            }
+            .tab-text{
+                font-size: 14px; color: #666; padding-top: 5px;
+            }
+            .tab-left:after{
+                display: inline-block; content: ""; width: 1px; height: 60%; position: absolute; top: 20%; right: 0; background: #C0C4CD;
+            }
+        }
+        .bottom-card{
+            width: 100%; height: 60%;
+           .bottom-content{
+                width: 100%; height: 70%; position: relative; top: 20px; margin: 0 auto; background: #fff;
+                 @media screen and (max-width: 349px) { top: 10px; }
+            }
+            .btn-style{
+                .btn-style(84.8%); height: 40px !important; border-radius: 20px; line-height: 40px; font-size: 15px;
+            }
+        }
+    }  
+}
+
+.bottom-card .bottom-content .left-content,.bottom-card .bottom-content .right-content{
+    float: left;
+    width: 55%;
+}
+.bottom-card .bottom-content .left-content{
+    width: 45%;
+    height: calc(~"100% - 50px");
+}
+.left-content .left-box{
+    width: 100%;
+    height: 100%;
+}
+.left-content .left-box img{
+    display: block;
+    margin: 0 auto;
+}
+.left-content .book-name{
+    color: #666;
+    margin: 12px 0;
+    text-align: center;
+}
+.content-title{
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #ff686b;
+}
+.chapter{
+    width: 90%;
+    margin: 20px 0;
+    color: #333;
+    font-size: 15px;
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    overflow:hidden; 
+}
+.right-content p:first-of-type{
+    margin-top: 0;
+}
+.bottom-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(~"30% - 20px");
+    position: relative;
+    top: 20px;
+    @media screen and (max-width: 349px) { height: calc(~"30% - 10px"); position: relative; top: 10px; }
+}

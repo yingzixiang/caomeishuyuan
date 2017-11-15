@@ -35,13 +35,20 @@ i{
 .clearFix{ *zoom:1;}   
 .clearFix:after{ content:""; clear:both; height:0px; display:block; overflow:hidden; visibility:hidden;}
 .hidden{ display: none;}
+//遮罩
+.shadow{
+    z-index: 9999;
+}
 
 //滚动条样式
 ::-webkit-scrollbar{ .size(0em,0em);}   
 ::-webkit-scrollbar-thumb{ border-radius: 0.5em; -webkit-box-shadow: 0 0 6px rgba(75,75,75,0.5); background-color: rgba(216, 216, 216, 0.2);}
 //按钮样式
 .btn-style(@size){
-    .size(@size,1rem); margin: 0 auto; background: #ff686b; text-align: center; color: #fff; font-size: 0.35rem; line-height: 1rem; border-radius: 0.5rem;
+    .size(@size,0.85rem); margin: 0 auto; background: #ff686b; text-align: center; color: #fff; font-size: 0.35rem; line-height: 0.85rem; border-radius: 0.5rem;
+}
+.btn-default(@size){
+    .size(@size,0.85rem); margin: 0 auto; background: #ccc; text-align: center; color: #fff; font-size: 0.35rem; line-height: 0.85rem; border-radius: 0.5rem;
 }
 .header-picture{
     .size(8rem,1.92rem);
@@ -55,15 +62,18 @@ i{
         float: right; display: inline-block; height: 0.7rem; line-height: 0.7rem; font-size: 0.384rem; font-weight: 600; margin: 0.64rem 0.85rem 0 0; color: rgb(102,102,102);
     }
 }
+
 //报名流程
 .pay-procedure{
-    display: flex; height: 0.96rem; margin: 0 0.64rem;
-    
+    display: flex; height: 0.96rem; margin: 0 0.64rem; 
     &>.inner-img{
         .size(1.5rem, @height); position: relative;
         &>img{
             width: 0.96rem; margin: 0 auto; display: block; background-size: 100% 100%;
         }
+    }
+    .inner-img-1>img{
+        width: 0.5rem !important;
     }
     .inner-img-1:after{
         content: "付费"; display: inline-block; width: 100%; height: 0.4rem; text-align: center; font-size: 0.3rem; color: #666; position: absolute; bottom: -0.5rem;
@@ -82,7 +92,7 @@ i{
     }
     &>.inner-over{
        &>img{
-           width: 0.5rem; margin: 0.2rem auto 0;
+           width: 0.6rem; height: 0.6rem; margin: 0.2rem auto 0;
        }
     }
     .inner-line:after{

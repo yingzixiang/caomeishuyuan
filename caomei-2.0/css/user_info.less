@@ -1,24 +1,47 @@
 @import "./public.less";
 select{
     border: none;
-    width: 100% !important;
+    width: 5.2rem !important;
     height: 100% !important;
     appearance: none;
     background: #fff;
-    border-bottom: 1px solid #ccc;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
     &>option{
         text-align: center;
     }
 }
+input{
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+}
 .suggest-text{
-    margin: 0.95rem 0 0 0.32rem; font-size: 13px; color: #333; font-weight: bold; text-align: center; 
+    margin: 0.95rem 0 0 0.64rem; text-align: left; font-size: 13px; color: #333; font-weight: bold;
 }
 .info-list{
         margin:0.35rem 1.06rem 0 0.59rem;
     &>li{
-        display: flex; flex: row; height: 0.85rem; 
+        display: flex; flex: row; position: relative; height: 0.85rem; 
         &>div{ width: 0.45rem; height: 100%; margin: 0 0.2rem; }
-        &>input{ flex: 2; border: none; border-bottom: 1px solid rgb(204,204,204); text-align: center;}
+        &>input{ flex: 2; -webkit-appearance: none;  font-size: 15px; border: none; border-radius: 0; border-bottom: 1px solid rgb(204,204,204); text-align: center;}
         ::-webkit-input-placeholder { /* WebKit browsers */ 
             color: #999;  text-align: center;
         } 
@@ -38,13 +61,13 @@ select{
             background: url(../images/info-icon/xingbie@3x.png) no-repeat center center; .contain;
         }
         .img-phone{
-             background: url(../images/info-icon/shouji@3x.png) no-repeat center center; .contain;
+            width: 0.35rem; margin: 0 0.25rem; background: url(../images/info-icon/shouji@3x.png) no-repeat center center; .contain;
         }
         .img-code{
              background: url(../images/info-icon/yanzhengma@3x.png) no-repeat center center; .contain;
         }
         .img-map{
-             background: url(../images/info-icon/dizhi@3x.png) no-repeat center center; .contain;
+            width: 0.4rem; margin: 0 0.225rem; background: url(../images/info-icon/dizhi@3x.png) no-repeat center center; .contain;
         }
         .img-age{
              background: url(../images/info-icon/nianlingduan@3x.png) no-repeat center center; .contain;
@@ -55,7 +78,41 @@ select{
         .img-education{
             background: url(../images/info-icon/xueli@3x.png) no-repeat center center; .contain;
         }
+        .select-text{
+            position: relative; margin: 0; flex: 2; font-size: 15px; color: #333; text-align: center; line-height: 0.85rem;
+        }
+        .select-text:after{
+            content:""; display:block; width: 100%; height: 1px; position: absolute; left: 0; bottom: 1px; background: #ccc;
+        }
+        .btn-code{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            padding: 0 5px;
+            height: 0.45rem;
+            font-size: 12px;
+            color: #fff;
+            background: #ff6666;
+            border: none;
+            border-radius: 20px;
+            @media screen and (max-width: 349px) { right: -10px; }
+        }
+        #demo1{
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Chrome/Safari/Opera */
+            -khtml-user-select: none; /* Konqueror */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+        }
     }
+}
+.btn-success{
+    .btn-style(6.72rem); margin-top: 0.5rem; margin-bottom: 0.5rem;
+}
+.btn-default{
+    .btn-default(6.72rem); margin-top: 0.5rem; margin-bottom: 0.5rem;
 }
 //地区联动样式
 .gearArea {
@@ -87,18 +144,18 @@ select{
     z-index: 9901;
     overflow: hidden;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
 }
 
 .slideInUp {
     -webkit-animation: slideInUp .3s;
-            animation: slideInUp .3s;
+    animation: slideInUp .3s;
 }
 
 @-webkit-keyframes slideInUp {
     from {
         -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0)
+        transform: translate3d(0, 100%, 0)
     }
     to {
         -webkit-transform: translate3d(0, 0, 0);
@@ -109,11 +166,11 @@ select{
 @keyframes slideInUp {
     from {
         -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0)
+        transform: translate3d(0, 100%, 0)
     }
     to {
         -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0)
+        transform: translate3d(0, 0, 0)
     }
 }
 
@@ -132,15 +189,15 @@ select{
 
 .area_roll>div {
     font-size: 1.6em;
-    height: 10em;
+    height: 13em;
     float: left;
     background-color: transparent;
     position: relative;
     overflow: hidden;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1
+    -ms-flex: 1;
+    flex: 1
 }
 
 .area_roll>div .gear {
@@ -154,7 +211,7 @@ select{
 .area_roll_mask {
     -webkit-mask: -webkit-gradient(linear, 0% 40%, 0% 0%, from(#debb47), to(rgba(36, 142, 36, 0)));
     -webkit-mask: -webkit-linear-gradient(bottom, #debb47 50%, rgba(36, 142, 36, 0));
-    padding: 0
+    padding: 0;
 }
 
 .area_grid {
@@ -191,7 +248,7 @@ select{
     background-color: #96979b;
     z-index: 15;
     -webkit-transform: scaleY(0.33);
-            transform: scaleY(0.33)
+    transform: scaleY(0.33)
 }
 
 .area_btn_box {
@@ -201,12 +258,12 @@ select{
     display: flex;
     -webkit-box-pack:justify;
     -webkit-justify-content:space-between;
-        -ms-flex-pack:justify;
-            justify-content:space-between;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     background-color: #f1f2f4;
     position: relative
 }
@@ -215,14 +272,14 @@ select{
     left: 0;
     top: 0;
     -webkit-transform-origin: 50% 20%;
-            transform-origin: 50% 20%
+    transform-origin: 50% 20%
 }
 
 .area_btn_box:after {
     left: 0;
     bottom: 0;
     -webkit-transform-origin: 50% 70%;
-            transform-origin: 50% 70%
+    transform-origin: 50% 70%
 }
 
 .tooth {
@@ -237,7 +294,7 @@ select{
     -webkit-box-orient:vertical;
     -webkit-box-direction:normal;
     -webkit-flex-direction:column;
-        -ms-flex-direction:column;
-            flex-direction:column;
+    -ms-flex-direction:column;
+    flex-direction:column;
     overflow: hidden
 }

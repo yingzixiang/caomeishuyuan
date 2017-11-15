@@ -15,11 +15,12 @@
    		<script src="js/LAreaData1.js"></script>
 	    <script src="js/LAreaData2.js"></script>
 	    <script src="js/LArea.js"></script>
+	    <script src="js/code.js"></script>
 	</head>
 	<body>
 		<div class="header-picture">
 			<span class="user_avatar">
-	  			<img src="images/line-clicle.png" width="100%" height="100%" />
+	  			<img src="images/baoming@3x.png" width="100%" height="100%" />
 	  		</span>
 	  		<span class="user_name clearFix">张三</span>
 		</div>
@@ -40,7 +41,7 @@
 		    	<img src="images/weikaixue@3x.png" />
 		    </div>
 		</div>
-		<p class="suggest-text">请您认真地填写以下信息, 我们会为您制定合适的课程。</p>
+		<p class="suggest-text">请您认真填写以下信息, 我们会为您制定合适的课程。</p>
 		<!--输入列表-->
 		<form>
 			<ul class="info-list">
@@ -50,46 +51,63 @@
 				</li>
 				<li class="list-2">
 					<div class="img-sex"></div>
-					<input type="text" placeholder="请输入姓名"/>
+					<input class="select-text select-sex" type="text" value="" placeholder="请选择身份信息" readonly="readonly"/>
+					<select id="select-sex" onchange="selectText(this)" >
+						<option>男</option>
+						<option>女</option>
+					</select>
 				</li>
 				<li class="list-3">
 					<div class="img-phone"></div>
-					<input name="mobile" type="number" placeholder="请输入手机号"/>
+					<input name="mobile" type="number" placeholder="请输入手机号" onblur="checkMobile(this)" />
 				</li>
 				<li class="list-4">
 					<div class="img-code"></div>
-					<input type="text" placeholder="请输入验证码"/>
+					<input type="number" placeholder="请输入验证码"/>
+					<button id="codeBtn" class="btn-code" type="button" onclick="time(this)">获取验证码</button>
 				</li>
 				<li class="list-5">
 					<div class="img-map"></div>
-					<input id="demo1" type="text" placeholder="请输入所在地"/>
-					<input id="value1" type="hidden" value="20,234,504"/>
+					<input id="demo1" type="text" placeholder="请输入所在地" readonly="readonly" />
 				</li>
 				<li class="list-6">
 					<div class="img-age"></div>
-						<select>
-							<option>公司职员</option>
-							<option>全职妈妈</option>
-							<option>学生</option>
-							<option>编制人员</option>
-						</select>
+					<input class="select-text select-age" type="text" value="" placeholder="请选择身份信息" readonly="readonly"/>
+					<select id="select-age" onchange="selectText(this)" >
+						<option>公司职员</option>
+						<option>全职妈妈</option>
+						<option>学生</option>
+						<option>编制人员</option>
+					</select>
 				</li>
 				<li class="list-7">
 					<div class="img-identity"></div>
-					<input type="text" placeholder="学生/职场人员"/>
+					<input class="select-text select-identity" type="text" value="" placeholder="请选择年龄段"="20以下" readonly="readonly"/>
+					<select id="select-identity" onchange="selectText(this)">
+						<option>20以下</option>
+						<option>20-30</option>
+						<option>30-40</option>
+						<option>40以上</option>
+					</select>
 				</li>
 				<li class="list-8">
 					<div class="img-education"></div>
-					<input type="text" placeholder="请输入学历"/>
+					<input class="select-text select-education" value="" placeholder="请选择学历" type="text" readonly="readonly"/>
+					<select id="select-education" onchange="selectText(this)">
+						<option>高中或以下</option>
+						<option>大学</option>
+						<option>硕士</option>
+						<option>博士</option>
+					</select>
 				</li>
 			</ul>
 		</form>
-		
+		<div class="btn-default">完成报到</div>
 	</body>
 </html>
 <script>
-    var area2 = new LArea();
-    area2.init({
+    var areas = new LArea();
+    areas.init({
         'trigger': '#demo1',
         'valueTo': '#value1',
         'keys': {
@@ -99,4 +117,9 @@
         'type': 2,
         'data': [provs_data, citys_data, dists_data]
     });
+    function selectText(obj) {
+    	var inputClassName = obj.id;
+    	var txt=obj.options[obj.options.selectedIndex].text;
+    	document.getElementsByClassName(inputClassName)[0].value = txt;
+    }
 </script>
