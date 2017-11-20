@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>教务</title>
+		<link rel="stylesheet/less" type="text/css" href="css/education.less" /> 
+		<link rel="stylesheet/less" type="text/css" href="font/iconfont.less" /> 
+   		<script src="js/less-1.7.0.js"></script>
+   		<script src="js/jquery-2.1.1.min.js"></script>
+   		<script src="js/dateClock.js"></script>
+   		<script src="js/viewport.js"></script>
+   		
+	</head>
+	<body>
+		<div class="content">
+			<div class="date-title">
+				<dt class="month_prev"><i><</i>上月</dt>
+				<dt id="nowDate">2001年11月</dt>
+				<dt class="month_next">下月<i>></i></dt>
+			</div>
+			<div id="calendar" class="edu_week">
+			</div>
+		</div>
+		<footer>
+			<span class="footer-nav nav-active">
+				<p class='iconfont icon-renwu1'></p>
+				<p class="i-text">本周任务</p>
+			</span>
+			<span class="footer-nav">
+				<p class='iconfont icon-renwu'></p>
+				<p class="i-text">教务</p>
+			</span>
+			<span class="footer-nav">
+				<p class='iconfont icon-geren'></p>
+				<p class="i-text">个人中心</p>
+			</span>
+		</footer>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function() {
+		//ajax获取日历json数据
+		var options = {
+			urlStr: "./data.json"
+		}
+		getClocked(options);
+	});
+</script>
