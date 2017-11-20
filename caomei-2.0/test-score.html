@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>考试</title>
+		<link rel="stylesheet/less" type="text/css" href="css/score.less" />  
+		<script src="js/less-1.7.0.js"></script>
+		<script src="js/viewport.js"></script>
+		
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>	 
+		<p class="text">本次考试</p>
+		<p class="score-text">80</p>
+		<i class="font-start">0</i>
+		<i class="font-end">100</i>
+		<div class="btn-style">查 看 答 案</div>
+	</body>
+</html>
+<script src="js/circleCanvas.js"></script>
+<script>
+	var abc= new Circle();
+	abc.draw();
+	var bcd = new Ring(Math.PI*0.8,100);
+	bcd.drawRing();
+</script>

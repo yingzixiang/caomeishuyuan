@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>考试</title>
+		<link rel="stylesheet/less" type="text/css" href="css/test.less" />  
+		<script src="js/less-1.7.0.js"></script>
+		<script src="js/viewport.js"></script>
+		<script src="js/swiper.min.js"></script>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="result-status result-true"></div>
+					<h1>1.以下关于绩效的说法正确的是</h1>
+					<label class="options options-true" data-q="q1" for="q1-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q1-0" name="q1" value="0" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+					<label class="options options-false" data-q="q1" for="q1-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q1-1" name="q1" value="1" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+					<label class="options" data-q="q1" for="q1-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q1-2" name="q1" value="2" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+					<label class="options" data-q="q1" for="q1-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q1-3" name="q1" value="3" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+				</div>
+				<div class="swiper-slide">
+					<!--回答结果-->
+					<div class="result-status result-false"></div>
+					<h1>1.以下关于绩效的说法正确的是</h1>
+					<label class="options" data-q="q2" for="q2-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q2-0" name="q2" value="1" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+					<label class="options" data-q="q2" for="q2-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q2-1" name="q2" value="2" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+					<label class="options" data-q="q2" for="q2-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q2-2" name="q2" value="3" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+					<label class="options" data-q="q2" for="q2-0" ontouchstart="optionsSelect(this)">
+						<input type="radio" id="q2-3" name="q2" value="4" />
+						<i class="result-i">A</i>
+						<p><span>发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间发大水了空间</span></p>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="result-text">
+			<div class="result-text-left"><i class="options-true">&bull;&nbsp;</i>  正确答案: C</div>
+			<div class="result-text-right"><i class="options-false">&bull;&nbsp;</i>  您的答案: C</div>
+		</div>
+		<div class="tab-btns">
+			<span class="swiper-button-prev">&#60; 上一题</span>
+			<span class="btn-inline">当前题目1/10</span>
+			<span class="swiper-button-next">下一题  &#62;</span>
+		</div>
+	</body>
+</html>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+		prevButton:'.swiper-button-prev',
+		nextButton:'.swiper-button-next',
+		paginationType : 'progress'
+	})
+    
+  	function optionsSelect(obj){
+		var types = obj.getAttribute("data-q");
+    	var checkbox=document.getElementsByName(types);
+    	var Num=checkbox.length;
+		for(var i=0;i<Num;i++){
+			document.getElementById("radio-"+types+"-"+i).setAttribute("class","checkradio-no");
+		} 
+		document.getElementById(obj.children[1].id).setAttribute("class","checkradio-true");
+    }
+</script>

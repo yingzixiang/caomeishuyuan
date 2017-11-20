@@ -1,0 +1,93 @@
+@import "./public.less";
+.swiper-container{ 
+    .size(@width,6.8rem); overflow-x: hidden; overflow-y: auto; padding-top: 1.355rem;
+}
+h1{
+    margin: 0 0.53rem 0.15rem; font-size: 17px; color: #666; font-weight: 600;
+}
+.options{
+    display: table; width: calc(~"100% - 1.2rem"); height: auto; color: #666; margin: 0.8rem auto 0.1rem; font-size: 16px;  color: #666;
+    &>input{
+        visibility: hidden; z-index: -1; position: absolute;
+    }
+    &>div{
+        display: table-cell; .size(0.33rem,0.33rem); margin-top: 2px; 
+    }
+    .checkradio-no{
+        background: url("../images/check-false.png") no-repeat center 4px; .contain;
+    }
+    .checkradio-true{
+        background: url("../images/check-true.png") no-repeat center 4px; .contain;
+    }
+    &>i{
+        display: table-cell; padding: 1px 8px 0 0.4rem; font-style: normal; vertical-align: top;
+    }
+    .result-i{ padding:1px 8px 0 0; }
+    &>p{
+        display: table-cell; height: auto; margin:0 auto; padding:0; clear: both;
+        &>span{
+            display: inline-block;
+        }
+    }
+}
+.options-true{ color: #8cbcf1; }
+.options-false{ color: #ff8083; }
+.result-text{
+    display: table; .size(7rem,0.6rem); font-size: 16px; color: #666; margin: 0.45rem auto 0;
+    &>div{
+        display: table-cell; text-align: center; line-height: 0.6rem;
+        &>i{
+          display: inline-block; height: 0.6rem; line-height: 0.6rem; font-size: 40px; vertical-align: top;
+        }
+    }
+}
+.tab-btns{
+    display: table; width: 100%; height: 0.85rem; margin-top: 0.82rem;
+    &>span{
+        display: table-cell; font-size: 14px; text-align: center; color: #8cbcf1;
+    }
+    .btn-inline,.swiper-button-disabled{
+        color: #ccc;
+    }
+}
+.btn-style{
+    .btn-style(6.94rem); margin-top: 0.5rem; margin-bottom: 0.5rem;
+}
+//轮播图样式
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &>.result-status{
+        .size(2.19rem,1.76rem); position: absolute; top: -0.82rem; right: 0.53rem; 
+    }
+    .result-true{
+        background:url(../images/result-true.png) no-repeat center center; .contain;
+    }
+    .result-false{
+        background:url(../images/result-false.png) no-repeat center center; .contain;
+    }
+    
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}

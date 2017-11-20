@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>本周任务</title>
+		<link rel="stylesheet/less" type="text/css" href="css/task.less" />  
+		<script src="js/less-1.7.0.js"></script>
+		<script src="js/viewport.js"></script>
+	</head>
+	<body>
+		<div class="content study-task">
+			<header>
+				<img src="images/img1.png" >
+				<span class="book-before book-name-before">书名:</span>
+				<span class="book-name">沉默的大多数沉默的大多数沉默的大多数</span>
+				<span class="book-before book-author-before">作者:</span>
+				<span class="book-author">王小波 / 著</span>
+				<span class="book-before book-star-before">推荐:</span>
+				<span class="book-star star-1"></span>
+			</header>
+			<!--进度条-->
+			<div class="canvas-content">
+				<canvas id="weekWork"></canvas>
+				<!--顶部圆-->
+				<span id="title-btn">任务列表</span>
+				<!--每日任务-->
+				<div class="task-day">
+					<span class="weekday">周一</span>
+					<div class="tag">
+						<i class></i>
+						<span>CSS气泡框实现</span>
+						<a class="btn-sign sign-go hidden">去阅读</a>
+						<a class="btn-sign sign-will hidden">未开始</a>
+						<a class="btn-sign sign-no"></a>
+						<a class="btn-sign sign-ok hidden"></a>
+					</div>
+				</div>
+				<div class="task-day">
+					<span class="weekday">周二</span>
+					<div class="tag">
+						<i class></i>
+						<span>CSS气泡框实现</span>
+						<a class="btn-sign sign-go hidden">去阅读</a>
+						<a class="btn-sign sign-will hidden">未开始</a>
+						<a class="btn-sign sign-no hidden"></a>
+						<a class="btn-sign sign-ok"></a>
+					</div>
+				</div>
+				<div class="task-day">
+					<span class="weekday">周三</span>
+					<div class="tag">
+						<i class></i>
+						<span>CSS气泡框实现</span>
+						<a class="btn-sign sign-go hidden">去阅读</a>
+						<a class="btn-sign sign-will hidden">未开始</a>
+						<a class="btn-sign sign-no"></a>
+						<a class="btn-sign sign-ok hidden"></a>
+					</div>
+				</div>
+				<div class="task-day">
+					<span class="weekday">周四</span>
+					<div class="tag">
+						<i class></i>
+						<span>CSS气泡框实现</span>
+						<a class="btn-sign sign-go">去阅读</a>
+						<a class="btn-sign sign-will hidden">未开始</a>
+						<a class="btn-sign sign-no hidden"></a>
+						<a class="btn-sign sign-ok hidden"></a>
+					</div>
+				</div>
+				<div class="task-day">
+					<span class="weekday">周一</span>
+					<div class="tag">
+						<i class></i>
+						<span>CSS气泡框实现</span>
+						<a class="btn-sign sign-go hidden">去阅读</a>
+						<a class="btn-sign sign-will">未开始</a>
+						<a class="btn-sign sign-no hidden"></a>
+						<a class="btn-sign sign-ok hidden"></a>
+					</div>
+				</div>
+				<div class="task-day">
+					<span class="weekday">周一</span>
+					<div class="tag">
+						<i class></i>
+						<span>CSS气泡框实现</span>
+						<a class="btn-sign sign-go hidden">去阅读</a>
+						<a class="btn-sign sign-will">未开始</a>
+						<a class="btn-sign sign-go"></a>
+						<a class="btn-sign sign-no hidden"></a>
+						<a class="btn-sign sign-ok hidden"></a>
+					</div>
+				</div>
+				<div class="task-day">
+					<span class="weekday">周一</span>
+					<div class="tag">
+						<i class></i>
+						<span>CSS气泡框实现</span>
+						<a class="btn-sign sign-go hidden">去阅读</a>
+						<a class="btn-sign sign-will">未开始</a>
+						<a class="btn-sign sign-no hidden"></a>
+						<a class="btn-sign sign-ok hidden"></a>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<span class="footer-nav nav-active">
+					<p class='iconfont icon-renwu1'></p>
+					<p class="i-text">本周任务</p>
+				</span>
+				<span class="footer-nav nav-shadow">
+					<p class='iconfont icon-renwu'></p>
+					<p class="i-text">教务</p>
+				</span>
+				<span class="footer-nav nav-shadow">
+					<p class='iconfont icon-geren'></p>
+					<p class="i-text">个人中心</p>
+				</span>
+			</footer>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//变量初始化   0: 表示未打卡， 1： 表示已打卡 ， 2： 表示未开始
+	var ZRM = {
+		"week": [0,1,1,0,1,2,2], //每天状态
+		"colors": ["#FF7B6A","#8CBCF1"], //圆形填充色
+		"thisColor": "",//当前颜色存放
+		x: 0, //圆心的x轴坐标值
+		r: 4, //圆的半径
+		"thisY": 0, //初始位置
+		"nowY": 0, //当前圆点y轴距离
+		"remSize": 0
+	}
+	function CanvasStatus() {
+		//定义必要变量
+		var taskDay = document.getElementsByClassName("task-day");
+		var weekDay = document.getElementsByClassName('weekday');
+		var oC = document.getElementById('weekWork');
+		var bodyObj = document.body;
+		remSize = 40*(bodyObj.clientWidth/320);
+		var topBlockHeight=1.2*remSize;
+		oC.width = bodyObj.scrollWidth * 4;
+		oC.height = bodyObj.scrollHeight * 3.2;
+		ZRM.x = 1.53*remSize + 5;
+		//创建画布
+		var oGC = oC.getContext('2d');
+		oGC.lineWidth = 4; //线条宽度
+		var o = document.getElementById("weekWork");
+		var h = o.offsetHeight / 4; //高度
+		var tH = parseInt((h-topBlockHeight));
+		//画线
+		oGC.beginPath();
+		oGC.strokeStyle = "#cccccc";
+		oGC.moveTo(ZRM.x*4, ZRM.nowY);
+		oGC.lineTo(ZRM.x*4, oC.height);
+		oGC.fillStyle = "#fff";
+		oGC.stroke();
+		oGC.closePath();
+		oGC.scale(4, 4);
+		
+		//画顶部圆
+		oGC.beginPath();
+		oGC.fillStyle = ZRM.colors[0];
+		oGC.strokeStyle = "#ffd9da";
+		oGC.arc(ZRM.x, 25, 4, 0, Math.PI * 2, false);
+		oGC.stroke();
+		oGC.fill();
+		oGC.closePath();
+		
+		var titleBtn = document.getElementById("title-btn");
+		titleBtn.style.top = 8 + "px";
+		titleBtn.style.left = (ZRM.x+20) + "px";
+		for(var i = 0; i <= 6; i++) {
+				
+			//按照指定的路径绘制弧线
+			ZRM.thisY = 0.5 * (i+1) * (tH / 5);
+			ZRM.nowY = 0.5 * i * (tH / 4);
+			
+			//画圆
+			oGC.beginPath(); //设置画布开始
+			
+			//颜色选择(边框颜色)
+			if(ZRM.week[i] == 0) oGC.fillStyle = ZRM.colors[0];
+			else if(ZRM.week[i] == 1) oGC.fillStyle = ZRM.colors[1];
+			else oGC.fillStyle = "#ccc";
+			var circleTop=ZRM.nowY+topBlockHeight+12;
+			//开始画圆
+			oGC.arc(ZRM.x, circleTop+5, ZRM.r, 0, Math.PI * 2, false);
+			taskDay[i].style.top = (circleTop-7) + "px";
+			//结束画布
+			oGC.fill();
+			oGC.closePath();
+			
+		}
+
+		//点击切换
+//		$(".footer-nav").unbind().bind("click", function() {
+//			$(".footer-nav").removeClass("nav-active");
+//			$(this).addClass('nav-active');
+//		})
+	}
+	addLoadEvent(CanvasStatus);
+</script>

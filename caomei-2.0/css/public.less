@@ -100,7 +100,28 @@ i{
     }
 }
 
-
+// //底部导航
+ footer{
+    display: table !important; .size(@width,1.05rem); position: fixed; bottom: 0; background: #fff; box-shadow: 0 0 10px #e2e2e2; z-index: 9999999;
+    .nav-active{
+        p{
+            color: #ff6666;
+        }
+    }
+    span{
+        display: table-cell; position: relative;
+        p{
+            font-style: normal; text-align: center; margin: 0;
+        }
+        .iconfont{
+            font-size: 26px;
+        }
+        .i-text{ font-size: 12px; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); }
+    }
+    .nav-shadow{
+        box-shadow: -1px 0 1px #e2e2e2;
+    }
+}
 
 
 
