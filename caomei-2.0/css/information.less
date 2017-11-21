@@ -1,0 +1,99 @@
+@import "./public.less";
+html{
+    .size(@width,@height); background: #f7f7f7;
+}
+.content{
+    .size(8rem, 3.9rem); margin-top: 0.53rem;
+    .bg-header{
+        display: flex; justify-content: center; align-items: center; .size(@width,2.2rem);
+        .blank{
+            width: 0.64rem;
+        }
+        .user-img{
+            width: 2.1rem; height: 2.1rem; border-radius: 50%; align-items: flex-end;
+        }
+        .user-text{
+            flex: 1;
+            &>span{
+                display: block; padding-left: 0.43rem; font-size: 13px; color: #666; height: 0.74rem; line-height: 0.74rem;
+                &>i{
+                    font-size: 16px; display: inline-block; padding-left: 0.8rem;
+                }
+            }
+            .user-id>i{
+                font-weight: 600;
+            }
+        }
+    }
+    .bottom-tab {
+        width: 100%; display: table; margin-top: 0.5rem;
+        &>div{
+            display: table-cell; width: 50%; text-align: center; vertical-align: middle; position: relative;
+            .tab-num {
+                font-size: 18px;
+                font-weight: bold;
+                padding-top: 4px;
+                background-image: -webkit-linear-gradient(left, #ff6666, #ffb667) !important;
+                background-image: -o-linear-gradient(right, #ff6666, #ffb667) !important;
+                background-image: -moz-linear-gradient(right, #ff6666, #ffb667) !important;
+                background-image: linear-gradient(to right, #ff6666, #ffb667) !important;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                -webkit-background-size: 200% 100%;
+                -webkit-animation: masked-animation 1s linear infinite;
+            }
+            .tab-text {
+                font-size: 14px;
+                color: #666;
+                padding-top: 5px;
+            }
+        }
+        .tab-left:after {
+            display: inline-block;
+            content: "";
+            width: 1px;
+            height: 60%;
+            position: absolute;
+            top: 20%;
+            right: 0;
+            background: #C0C4CD;
+        }
+    }
+}
+//菜单列表
+.list-block {
+    .size(@width,auto); background: #fff; margin-top: 0.34rem; background: #fff; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;
+    &>li{
+        .size(@width, 1.3rem); margin-left: 0.62rem; display: flex; justify-content: flex-start; align-items: center; 
+        &>span{
+            display: inline-block; font-size: 15px; color: #666;
+        }
+        .li-img{
+            width: 25px; height: 1.3rem; 
+        }
+        .li-text{
+            width: 5.6rem; padding-left: 20px;
+        }
+        .li-go{
+            width: 16px; height: 16px; background: url(../images/li-icon/li-go.png) center left no-repeat; .contain;
+        }
+        .li-img-1{
+            background: url(../images/li-icon/li-select.png) center left no-repeat; .contain;
+        }
+        .li-img-2{
+            background: url(../images/li-icon/li-plan.png) center left no-repeat; .contain;
+        }
+        .li-img-3{
+            background: url(../images/li-icon/li-report.png) center left no-repeat; .contain;
+        }
+        .li-img-4{
+            background: url(../images/li-icon/li-user.png) center left no-repeat; .contain;
+        }
+        .li-img-5{
+            background: url(../images/li-icon/li-edit.png) center left no-repeat; .contain;
+        }
+    }
+    .li-border-top{
+        border-top: 1px solid #ddd;
+    }
+}

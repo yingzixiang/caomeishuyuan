@@ -1,17 +1,23 @@
 @import "./public.less";
+body, html{
+    .size(@width,@height); background: #F7F7F7;
+}
 .content{
     .size(8rem,auto); 
     .date-title{
-        display: table; .size(8rem, 1.4rem); line-height: 1.4rem; font-size: 15px; text-align: center; color: #999;
+        display: flex; justify-content: center; align-items: center; .size(8rem, 1.4rem); line-height: 1.4rem; font-size: 15px; text-align: center; color: #999;
         &>dt{
-            height: 100%; display: table-cell;
+            flex: 1;
             &>i{
-                font-size: 18px; display: inline-block; .size(20px,@height); 
+                font-size: 18px; display: inline-block; .size(20px,1.4rem);  
             }
         }
         #nowDate{
             color: #666; font-size: 17px; font-weight: 600;
         }
+    }
+    .list-block {
+        width: 8rem; height: 2.24rem; margin-top: 0.55rem; background: #fff;
     }
 }
 .singer_r_img{display:block;width:114px;height:52px;line-height:45px;background:url(../images/sing_week.gif) right 2px no-repeat;vertical-align:middle;margin-bottom:-10px;text-decoration:none;}
@@ -22,7 +28,7 @@
 .sign{border-bottom: 1px solid #DDDDDD; width: 100%; height: 6.1rem;}
 .sign table{border-collapse: collapse;border-spacing: 0;width:95%; margin: 0 auto; height: 100%;}
 .sign .week{ font-size: 15px; color: #4d4d4d; font-weight: 600;}
-.sign th,.sign td {width: 30px;height: 14%;text-align: center;}
+.sign th,.sign td { text-align: center;}
 .sign th { position: relative; font-size: 15px; font-weight: bold; color: #cacaca;}
 .sign td {vertical-align: middle; font-size: 16px;}      
 .sign .on { position: relative; font-family:"iconfont" !important;
@@ -35,8 +41,6 @@
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;}
-.thnum{color: #A6A6A6;}
-.calendar_record{ position: relative; } 
 .sign .on:after{ display: inline-block; content: '\e7e7'; font-size: 12px; position: absolute; bottom: 9px; right: -15px; margin: 0 auto; right: 0px; color: #ff8a8d; }
 .sign .off:after{ display: inline-block; content: '\e62d'; font-size: 12px; position: absolute; bottom: 9px; right: -15px; margin: 0 auto; right: 0px; color: #8cbcf1;}
 .calendar_month_next,.calendar_month_prev{width: 34px;height: 40px;cursor: pointer;background:url(images/sign_arrow.png) no-repeat;}
@@ -50,7 +54,17 @@
 .daylink{ height: 40px; background:#DCDCDC; color: #333;}
 .daylink span{ display: inline-block; width: 80%; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; }
 .daylink i{ float: right; padding: 0 5px;}
-.btn-goread{ display: inline-block; width: 20px; height: 30px; background: url(../images/file.png) no-repeat center center; background-size: 100% 100%; }
-.item-title{ color: #757575;}
+
+.item-after{ 
+    position: relative; width: 100%; padding-left: 0.43rem; height: 1.12rem; line-height: 1.12rem;
+    &>span{
+        display: table-cell; font-size: 16px; color: #666;
+    }
+    #innerText:before {
+        content: '•'; display: inline-block; width: 15px; height: 100%; line-height: 1.14rem; font-size: 20px;
+    }
+    .btn-goread{ display: inline-block; width: 10px; height: 100%; position: absolute; right: 40px; top: 0; background: url(../images/icon-go.png) no-repeat center center; .contain;}
+}
 .now,.clicknow{ color: #fff;}
 .now:before,.clicknow:before{ content: ""; display: inline-block; width: 24px; height: 24px; border-radius: 50%; background: #ff8083; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: -1;}
+.calendar_record{ position: relative; color: #A6A6A6;} 

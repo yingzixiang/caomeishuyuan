@@ -4,7 +4,6 @@ function getClocked(options){
   calUtil.ajaxApiInit(OP);
   calUtil.bindEnvent();
   calUtil.ajaxApilink();
-  calUtil.menuDiv();
 }
 var calUtil = {
   //当前日历显示的年份
@@ -22,6 +21,7 @@ var calUtil = {
     calUtil.setMonthAndDay();
     calUtil.draw(OP);
     calUtil.bindThis();
+    $(".now").click();
   },
   //初始化日历
   initAgain:function(OP){
@@ -70,7 +70,8 @@ var calUtil = {
 				async:false, 
 				dataType: 'json',
 				success: function(data) {
-					$(".list-block").html(calUtil.linkInline);
+					$(".box").html(calUtil.linkInline);
+					$("#innerText").html(data.bookInfo);
   				return;
 				},
 				error: function(){
@@ -97,7 +98,6 @@ var calUtil = {
       calUtil.eventName="prev";
       calUtil.setMonthAndDay();
       calUtil.ajaxApiInit();
-      calUtil.menuDiv();
     });
     //绑定下个月事件
     $(".month_next").click(function(dataStr){
@@ -105,7 +105,6 @@ var calUtil = {
       calUtil.eventName="next";
       calUtil.setMonthAndDay();
       calUtil.ajaxApiInit();
-      calUtil.menuDiv();
     });
   },
   //点击当前日期
@@ -115,17 +114,11 @@ var calUtil = {
 			$(this).addClass("clicknow");
 			$(".now").removeClass("nowStyle");
 			var nowdays = $(this).text();
-			calUtil.linkInline = '<ul style="height: 80px;"><li class="item-content"><div class="item-inner" style="padding: 0; justify-content: flex-start;">';
-			calUtil.linkInline += '<div class="item-title" style="height: 80px; padding-top: 10px; padding-right: 15px; border-right: 1px solid #e7e7e7;">' + calUtil.showMonth + '/' + nowdays +'</div>'
-			calUtil.linkInline += '<div class="item-title" style="height: 80px; padding: 10px 15px 0;">本周复习</div>'
-			calUtil.linkInline += '<div class="item-after" style="position: absolute; right: 15px; top: 10px;"><span class="btn-goread"></span></div></div></li></ul>'
+			calUtil.linkInline = '<div class="list-block">'
+			calUtil.linkInline += '<p style=" width: 100%; height: 1.12rem; line-height: 1.12rem; color: #666; font-size: 18px; padding-left: 0.43rem; font-weight: 600;">当日任务</p>'
+			calUtil.linkInline += '<div class="item-after"><span id="innerText"></span><span class="btn-goread"></span></div></div>'
 			calUtil.ajaxApilink();
     });
-  },
-  //加载菜单
-  menuDiv:function(){
-  		var flake = '<div class="edu-explain"><div class="edu-btn-1"></div><div class="edu-btn-2"></div><div class="edu-btn-3"></div></div>';
-			$(".note-p-1").after(flake);
   },
   //获取当前选择的年月
   setMonthAndDay:function(){
