@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>总学分</title>
+		<link rel="stylesheet/less" type="text/css" href="css/score.less" />  
+		<script src="js/less-1.7.0.js"></script>
+		<script src="js/viewport.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>	 
+		<p class="text">已获得总学分</p>
+		<p class="score-text">1180</p>
+		<i class="font-start">0</i>
+		<i class="font-end-all">1200</i>
+		<div class="user-num">
+			<div>班级名次 : <i> 10</i></div>
+			<div>全院名次 : <i> 10</i></div>
+		</div>
+		<!--每周成绩-->
+		<div class="week-statistics">
+			<p class="title">第三周 (2017.9.25-2.17.10.2)</p>
+			<div class="week-box">
+				<div>
+					<p class="p-text">综合分</p>
+					<p class="p-num">50</p>
+				</div>
+				<div>
+					<p class="p-text">班级名次</p>
+					<p class="p-num">50</p>
+				</div>
+			</div>
+		</div>
+		<div class="week-statistics">
+			<p class="title">第三周 (2017.9.25-2.17.10.2)</p>
+			<div class="week-box">
+				<div>
+					<p class="p-text">综合分</p>
+					<p class="p-num">50</p>
+				</div>
+				<div>
+					<p class="p-text">班级名次</p>
+					<p class="p-num">50</p>
+				</div>
+			</div>
+		</div>
+		<div class="week-statistics">
+			<p class="title">第三周 (2017.9.25-2.17.10.2)</p>
+			<div class="week-box">
+				<div>
+					<p class="p-text">综合分</p>
+					<p class="p-num">50</p>
+				</div>
+				<div>
+					<p class="p-text">班级名次</p>
+					<p class="p-num">50</p>
+				</div>
+			</div>
+		</div>
+		<div class="week-statistics last-child">
+			<p class="title">第三周 (2017.9.25-2.17.10.2)</p>
+			<div class="week-box">
+				<div>
+					<p class="p-text">综合分</p>
+					<p class="p-num">50</p>
+				</div>
+				<div>
+					<p class="p-text">班级名次</p>
+					<p class="p-num">50</p>
+				</div>
+			</div>
+		</div>
+		<div class="link-detail"></div>
+	</body>
+</html>
+<script src="js/circleCanvas.js"></script>
+<script>
+	var abc= new Circle();
+	abc.draw();
+	var bcd = new Ring(Math.PI*0.8,100);
+	bcd.drawRing();
+</script>

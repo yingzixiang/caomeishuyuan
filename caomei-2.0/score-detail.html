@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-touch-fullscreen" content="YES">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>考试</title>
+		<link rel="stylesheet/less" type="text/css" href="css/score.less" />  
+		<script src="js/less-1.7.0.js"></script>
+		<script src="js/viewport.js"></script>
+		
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>	 
+		<p class="text">本次考试</p>
+		<p class="score-text">80</p>
+		<i class="font-start">0</i>
+		<i class="font-end">100</i>
+		<!--本周签到情况-->
+		<div class="week-statistics-detail">
+			<p class="title">本周签到情况</p>
+			<div class="week-signs">
+				<div>
+					<center>日</center>
+					<center class="week-true"></center>
+				</div>
+				<div>
+					<center>一</center>
+					<center class="week-true"></center>
+				</div>
+				<div>
+					<center>二</center>
+					<center class="week-true"></center>
+				</div>
+				<div>
+					<center>三</center>
+					<center class="week-true"></center>
+				</div>
+				<div>
+					<center>四</center>
+					<center class="week-true"></center>
+				</div>
+				<div>
+					<center>五</center>
+					<center class="week-true"></center>
+				</div>
+				<div>
+					<center>六</center>
+					<center class="week-true"></center>
+				</div>
+			</div>
+		</div>
+		<div class="week-statistics-detail">
+			<div class="test-score">
+				<div class="circle-score">80分</div>
+				<p>本周考试成绩</p>
+				<span>查看详情</span>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/circleCanvas.js"></script>
+<script>
+	var abc= new Circle();
+	abc.draw();
+	var bcd = new Ring(Math.PI*0.8,100);
+	bcd.drawRing();
+</script>
