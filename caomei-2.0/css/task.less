@@ -56,14 +56,11 @@ html,body{ .size(@width,@height);}
                     @media screen and (max-width: 349px) { font-size: 14px; }
                 }
                 .sign-go{ color: #8CBCF1;}
-                .sign-will{ color: #bbb;}
-                .sign-no:before{
-                    content: ""; display: inline-block; width: 20px; height: 20px; 
-                    background: url(images/task-false.png) no-repeat center center; background-size: 100% 100%;
-                }
-                .sign-ok:before{
-                    content: ""; display: inline-block; width: 20px; height: 20px;
-                    background: url(images/task-true.png) no-repeat center center; background-size: 100% 100%;
+                .sign-no{ color: #bbb;}
+                .sign-ok{ color: rgb(255,104,107);}
+                .sign-will:before{ 
+                    content: ""; display: inline-block; width: 20px; height: 20px; position: absolute; top: 0.2rem; right: 0.3rem;
+                    background: url(../images/task-false.png) no-repeat center center; .contain
                 }
             }
             span{

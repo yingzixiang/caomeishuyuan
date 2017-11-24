@@ -80,8 +80,9 @@
 </html>
 <script src="js/circleCanvas.js"></script>
 <script>
-	var abc= new Circle();
-	abc.draw();
-	var bcd = new Ring(Math.PI*0.8,100);
-	bcd.drawRing();
+	var canvasBlank= new Circle();
+	canvasBlank.draw();
+	var allNum = parseInt(1000/1200*100);
+	var canvasScore = new Ring(Math.PI*0.8,allNum);
+	canvasScore.drawRing();
 </script>

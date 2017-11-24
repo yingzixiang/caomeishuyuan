@@ -1,6 +1,18 @@
 @import "./public.less";
 body{
     background: #f7f7f7;
+    .user-info {
+        .size(6.72rem,2.86rem); margin: 0 auto;
+        &>img {
+            float: left; display: inline-block; width: 2.13rem; height: 2.13rem; margin-top: 0.73rem; border-radius: 50%; background-size: 100% 100%;
+        }
+        .infotext {
+            float: left; display: inline-block; width: 4.59rem; height: 0.6rem;  margin-top: 0.9rem; line-height: 0.6rem;
+            &>p{
+                font-size: 16px; color: #666; text-align: center;
+            }
+        }
+    }
     #share-table{
          width: 6.83rem; margin: 0.81rem auto 0; text-align:justify;
         tr{
